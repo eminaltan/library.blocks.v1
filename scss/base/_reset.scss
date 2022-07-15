@@ -1,0 +1,19 @@
+html {
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  pad: 0;
+}
+a {
+  text-decoration: inherit;
+  color: inherit;
+}

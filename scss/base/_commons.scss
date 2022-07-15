@@ -1,0 +1,28 @@
+.commons {
+  &__display {
+    &_flex {
+      display: flex;
+      &_direction-r {
+        flex-direction: row;
+      }
+      &_direction-c {
+        flex-direction: column;
+      }
+      &_justify-content-c {
+        justify-content: center;
+      }
+      &_justify-content-s {
+        justify-content: space-between;
+      }
+      &_justify-content-se {
+        justify-content: space-evenly;
+      }
+      &_justify-items-c {
+        justify-items: center;
+      }
+      &_align-items-c {
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+css/
+images/
+react/
+scss/components/
+scss/base/_commons.scss
+scss/pages/index.scss
+node_modules
+test.html

@@ -1,0 +1,28 @@
+@use "sass:math";
+@use "sass:meta";
+
+/// If setGap function have unit suffix this function remove unit and return value
+/// @param {string} $props [none]- This property pass from setGap function.
+@function stripInput($props) {
+  @if meta.type-of($props) == "number" and not math.is-unitless($props) {
+    @return (math.div($props, $props * 0+1));
+  }
+  @return $props;
+}
+
+/// This function adjust gap -margin, padding etc.- of element using by $elementFontSize value
+/// @require {function} stripInput -This function helps to clear unit value of the font
+/// @param {number} $elementGap [null]-Calculated element's gap -margin, padding etc.- this unit may be unitless
+/// @param {number} $elementFontSize [null]-Element's fontsize property information
+/// @param {string} $newUnit [em]-Element's measurement unit this unit may be unitless
+@function setGap($elementGap: null, $elementFontSize, $newUnit: em) {
+  $isString: stripInput($elementFontSize);
+
+  $result: null;
+
+  @if $newUnit == null {
+    @return math.div($elementGap, $isString);
+  } @else {
+    @return math.div($elementGap, $isString) + $newUnit;
+  }
+}

@@ -1,0 +1,7 @@
+@use "../base/commons" as *;
+/// T
+@mixin display($property) {
+  @extend #{$property};
+}
+
+
